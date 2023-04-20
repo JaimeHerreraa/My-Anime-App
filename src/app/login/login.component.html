@@ -1,0 +1,25 @@
+<div class="container-xxl d-flex justify-content-center align-items-center">
+    <div class="login">
+        <div class="row mt-5">
+            <div class="col-12 d-flex align-items-center flex-column">
+                <h2>Welcome!</h2>
+                <small class="login-small" style="color: #b1b3b4;">Log in by entering the information below</small>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <form [formGroup]="loginForm" class="col-12 d-flex align-items-center flex-column ps-5 pe-5">
+                <div class="input-group mb-3">
+                    <span class="input-group-text">@</span>
+                    <input formControlName="username" type="text" [class.is-invalid]="validateRequiredError(loginForm.controls['username'])" [class.is-valid]="controlIsValid(loginForm.controls['username'])" class="form-control" placeholder="Username" id="username" name="username">
+                </div>
+                <div class="input-group mb-5">
+                    <span class="input-group-text">...</span>
+                    <input formControlName="password" type="password" [class.is-invalid]="validateRequiredError(loginForm.controls['password'])" [class.is-valid]="controlIsValid(loginForm.controls['password'])" class="form-control" placeholder="Password" id="password" name="password">
+                </div>
+                <div class="input-group d-flex justify-content-center">
+                    <button type="submit" class="btn btn-success" [disabled]="loginForm.invalid">Log In</button>
+                </div>
+            </form>
+        </div> 
+    </div>
+</div>
