@@ -1,0 +1,26 @@
+.navbar {
+    background-color: #2F353A;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-weight: 600;
+}
+
+.nav-link {
+    color:#65696D;
+    font-weight: 600;
+    transition: all ease .5s;
+}
+
+.nav-link:hover {
+    color: #fff;
+}
+
+.active-link {
+    color: #fff;
+}
+
+.btn {
+    border-radius: 50%;
+}
