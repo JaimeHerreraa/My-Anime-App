@@ -1,0 +1,33 @@
+.footer {
+    background-color: #2F353A;
+    width: 100vw;
+    height: 16vh;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer-text {
+    color: #fff;
+    margin: 0;
+}
+
+.footer-text > small {
+    color: #65696D;
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.links {
+    background-color: #292E32;
+    border-radius: 16px;
+    width: 75%;
+}
