@@ -53,12 +53,15 @@
 
 .aside-list-item:hover .icon-div {
     background-color: #01BCF3;
+    cursor: pointer;
 }
 
 .aside-list-item:hover .anime-name {
     color: #01BCF3;
+    cursor: pointer;
 }
 
 .aside-list-item:hover .anime-tag {
     background-color: #01BCF3;
+    cursor: pointer;
 }
