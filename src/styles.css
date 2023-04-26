@@ -8,3 +8,7 @@
 body {
     background-image: url("./assets/images/bg.jpg");
 }
+
+* {
+    box-sizing: border-box;
+}
