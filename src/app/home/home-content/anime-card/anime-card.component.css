@@ -1,0 +1,111 @@
+.card-content {
+    max-width: 186px;
+}
+
+.card-img > img {
+    width: 175px;
+    height: 255px;
+    border: 6px solid #fff;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 4px;
+}
+
+.card-img {
+    position: relative;
+}
+
+.card-text {
+    font-size: .8rem;
+    font-weight: 600;
+    transition: all ease .5s;
+    cursor: pointer;
+}
+
+.card-tag {
+    position: absolute;
+    width: 3rem;
+    height: 1.4rem;
+    background-color: #01BCF3;
+    bottom: 15px;
+    right: 30px;
+    font-size: .8rem;
+    color: #fff;
+    border-radius: .8rem;
+}
+
+.card-img:hover {
+    cursor: pointer;
+}
+
+.card-content:hover > .card-text {
+    color: #01BCF3;
+}
+
+.card-hover {
+    width: 175px;
+    height: 255px;
+    position: absolute;
+    background-color: #01BCF3;
+    border: 6px solid #fff;
+    border-radius: 8px;
+    top: 0;
+    left: 0;
+    transition: opacity .5s ease;
+    opacity: 0;
+}
+
+.card-img:hover > {
+    z-index: 1;
+}
+
+.card-img:hover > .card-hover {
+    opacity: .9;
+    z-index: 5;
+}
+
+.card-hover > i {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.card-popover {
+    background-color: #3B4348;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 8px;
+    border-radius: 8px;
+    min-width: 200px;
+    min-height: 200px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity ease .5s;
+    bottom: 60px;
+    left: 100px;
+}
+
+.card-img:hover > .card-popover {
+    opacity: 1;
+    z-index: 10;
+}
+
+.popover-body {
+    font-size: .8rem;
+    color: #9AA7AE;
+}
+
+.popover-header p {
+    margin: 0;
+}
+
+.popover-rank i {
+    color: #FFC700;
+}
+
+.popover-tag {
+    width: 3rem;
+    height: 1.4rem;
+    background-color: #01BCF3;
+    font-size: .8rem;
+    font-weight: 600;
+    color: #fff;
+    border-radius: .8rem;
+}

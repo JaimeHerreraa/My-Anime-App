@@ -11,7 +11,7 @@ export class AnimeService {
     constructor(private httpClient: HttpClient) {}
 
     getAnimeList(): Observable<IAnime[]> {
-        return this.httpClient.get(`${this.url}?limit=25`).pipe(
+        return this.httpClient.get(`${this.url}?limit=25&page=1`).pipe(
             map((response: any) => this.convertToIAnime(response.data))
         )
     }

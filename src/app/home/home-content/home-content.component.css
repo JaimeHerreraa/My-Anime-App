@@ -1,0 +1,27 @@
+.icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background-color: #ff9200;
+}
+
+.icon > i {
+    color: #fff;
+}
+
+.home-title {
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.home-tag {
+    width: 4rem;
+    height: 2rem;
+    background-color: #01BCF3;
+    color: #fff;
+    border-radius: 1rem;
+    font-size: .8rem;
+    font-weight: 600;
+    position: relative;
+}

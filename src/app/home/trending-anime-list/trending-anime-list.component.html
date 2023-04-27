@@ -1,21 +1,16 @@
-<div class="col-3">
-    <aside class="home-aside d-flex flex-column">
-        <div class="aside-header d-flex justify-content-between align-items-center pe-3 ps-3 pt-1 pb-1">
-            <P class="header-text">Trending Anime Movies</P>
-            <i class="bi bi-caret-right-fill"></i>
-        </div>
-        <div *ngIf="movies" class="aside-list d-flex p-3 flex-column">
-            <div *ngFor="let movie of movies" class="aside-list-item w-100 mb-3">
-                <div class="row d-flex flex-row align-items-center">
-                    <div class="col-9 d-flex align-items-center">
-                        <div class="icon-div  d-flex justify-content-center align-items-center me-2">
-                            <i class="bi bi-caret-right-fill"></i>
-                        </div>
-                        <p class="anime-name">{{movie.title}}</p>
-                    </div>
-                    <div class="anime-tag d-flex justify-content-center align-items-center col-2">{{movie.type}}</div>
-                </div>
+<aside class="home-aside d-flex flex-column mt-4">
+    <div class="aside-header d-flex justify-content-between align-items-center pe-3 ps-3 pt-1 pb-1">
+        <P class="header-text">Trending Anime Movies</P>
+        <i class="bi bi-caret-right-fill"></i>
+    </div>
+    <div *ngIf="movies" class="aside-list pe-3 ps-3 pt-2 pb-2 d-flex flex-column">
+        <div *ngFor="let movie of movies" class="aside-list-item mb-3 d-flex align-items-center">
+            <div class="icon-div d-flex justify-content-center align-items-center "><i
+                    class="bi bi-caret-right-fill"></i></div>
+            <div class="ms-3">
+                <p class="anime-name">{{movie.title}}</p>
+                <div class="anime-tag">{{movie.type}}</div>
             </div>
         </div>
-    </aside>
-</div>
+    </div>
+</aside>

@@ -1,5 +1,4 @@
 .home-aside {
-    width: 100%;
     background-color: #fff;
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 4px;
@@ -23,8 +22,8 @@
 }
 
 .icon-div {
-    width: .8rem;
-    height: .8rem;
+    width: 1rem;
+    height: 1rem;
     background-color: #e2e2e2;
     border-radius: 50%;
     transition: all ease .5s;
@@ -32,7 +31,7 @@
 
 .icon-div > i {
     color: #fff;
-    font-size: .7rem;
+    font-size: .5rem;
 }
 
 .anime-name {
@@ -49,6 +48,7 @@
     border-radius: 1rem;
     background-color: #91DEF8;
     transition: all ease .5s;
+    text-align: center;
 }
 
 .aside-list-item:hover .icon-div {

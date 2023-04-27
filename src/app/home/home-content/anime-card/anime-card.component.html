@@ -1,0 +1,22 @@
+<div class="card-content d-flex flex-column align-items-center justify-content-center ">
+    <div class="card-img">
+        <img [src]="anime.images.image_url" [alt]="anime.title">
+        <div class="card-tag text-center">{{anime.type === "TV" ? "Anime" : ""}}</div>
+        <div class="card-hover d-flex justify-content-center align-items-center"><i class="bi bi-play-circle"></i></div>
+        <div class="card-popover flex-column p-3">
+            <div class="popover-header d-flex flex-column">
+                <p>{{anime.title}}</p>
+                <div class="d-flex align-items-center mt-2">
+                    <div class="popover-tag text-center me-2">{{anime.type === "TV" ? "Anime" : ""}}</div>
+                    <div class="popover-rank"><i class="bi bi-star-fill"></i> {{anime.score}}</div>
+                </div>
+            </div>
+            <div class="popover-body mt-2">
+                {{shortSynopsis}}...
+            </div>
+        </div>
+    </div>
+    <div class="card-text text-center mt-2">
+        {{anime.title}}
+    </div>
+</div>

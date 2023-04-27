@@ -8,6 +8,9 @@ import { StoreModule } from "@ngrx/store";
 import { HomeEffect } from "./state/home.effect";
 import { homeReducer } from "./state/home.reducer";
 import { CommonModule } from "@angular/common";
+import { HomeContentComponent } from "./home-content/home-content.component";
+import { HomeAnimeListComponent } from "./home-content/home-anime-list/home-anime-list.component";
+import { AnimeCardComponent } from "./home-content/anime-card/anime-card.component";
 
 @NgModule({
     imports: [
@@ -18,10 +21,14 @@ import { CommonModule } from "@angular/common";
     ],
     declarations: [
         HomeLayoutComponent,
-        TrendingAnimeListComponent
+        TrendingAnimeListComponent,
+        HomeContentComponent,
+        HomeAnimeListComponent,
+        AnimeCardComponent
     ],
     exports: [
-        HomeLayoutComponent
+        HomeLayoutComponent,
+        AnimeCardComponent
     ],
     providers: [
         AnimeService
