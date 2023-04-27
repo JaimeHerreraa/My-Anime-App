@@ -5,11 +5,15 @@ import * as HomeActions from "./home.actions";
 export interface HomeState {
     animes: IAnime[];
     movies: IAnime[];
+    animesLoading: boolean;
+    moviesLoading: boolean;
 }
 
 const initialState: HomeState = {
     animes: [],
-    movies: []
+    movies: [],
+    animesLoading: true,
+    moviesLoading: true
 }
 
 const homeSelector = createFeatureSelector<HomeState>("home");
@@ -24,18 +28,30 @@ export const moviesSelector = createSelector(
     state => state.movies
 )
 
+export const animesLoadingSelector = createSelector(
+    homeSelector,
+    state => state.animesLoading
+)
+
+export const moviesLoadingSelector = createSelector(
+    homeSelector,
+    state => state.moviesLoading
+)
+
 export const homeReducer = createReducer<HomeState>(
     initialState,
     on(HomeActions.loadAnimesSuccess, (state, action): HomeState => {
         return {
             ...state,
-            animes: action.animes
+            animes: action.animes,
+            animesLoading: false
         }
     }),
     on(HomeActions.loadMoviesSuccess, (state, action): HomeState => {
         return {
             ...state,
-            movies: action.movies
+            movies: action.movies,
+            moviesLoading: false
         }
     })
 )

@@ -13,13 +13,15 @@ import { HomeAnimeListComponent } from "./home-content/home-anime-list/home-anim
 import { AnimeCardComponent } from "./home-content/anime-card/anime-card.component";
 import { MovieEffect } from "./state/movie.effect";
 import { StringShorthenerPipe } from "./services/string-shorthener.pipe";
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
     imports: [
         HttpClientModule,
         EffectsModule.forFeature([AnimeEffect, MovieEffect]),
         StoreModule.forFeature("home", homeReducer),
-        CommonModule
+        CommonModule,
+        SharedModule
     ],
     declarations: [
         HomeLayoutComponent,
