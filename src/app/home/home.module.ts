@@ -5,17 +5,19 @@ import { AnimeService } from "./services/anime.service";
 import { HttpClientModule } from "@angular/common/http";
 import { EffectsModule } from "@ngrx/effects";
 import { StoreModule } from "@ngrx/store";
-import { HomeEffect } from "./state/home.effect";
+import { AnimeEffect } from "./state/anime.effect";
 import { homeReducer } from "./state/home.reducer";
 import { CommonModule } from "@angular/common";
 import { HomeContentComponent } from "./home-content/home-content.component";
 import { HomeAnimeListComponent } from "./home-content/home-anime-list/home-anime-list.component";
 import { AnimeCardComponent } from "./home-content/anime-card/anime-card.component";
+import { MovieEffect } from "./state/movie.effect";
+import { StringShorthenerPipe } from "./services/string-shorthener.pipe";
 
 @NgModule({
     imports: [
         HttpClientModule,
-        EffectsModule.forFeature([HomeEffect]),
+        EffectsModule.forFeature([AnimeEffect, MovieEffect]),
         StoreModule.forFeature("home", homeReducer),
         CommonModule
     ],
@@ -24,11 +26,13 @@ import { AnimeCardComponent } from "./home-content/anime-card/anime-card.compone
         TrendingAnimeListComponent,
         HomeContentComponent,
         HomeAnimeListComponent,
-        AnimeCardComponent
+        AnimeCardComponent,
+        StringShorthenerPipe
     ],
     exports: [
         HomeLayoutComponent,
-        AnimeCardComponent
+        AnimeCardComponent,
+        StringShorthenerPipe
     ],
     providers: [
         AnimeService

@@ -8,7 +8,8 @@
             <div class="icon-div d-flex justify-content-center align-items-center "><i
                     class="bi bi-caret-right-fill"></i></div>
             <div class="ms-3">
-                <p class="anime-name">{{movie.title}}</p>
+                <p class="anime-name" *ngIf="movie.title.length > 43">{{movie.title | shorthener : 43}}...</p>
+                <p class="anime-name" *ngIf="movie.title.length < 43">{{movie.title}}</p>
                 <div class="anime-tag">{{movie.type}}</div>
             </div>
         </div>

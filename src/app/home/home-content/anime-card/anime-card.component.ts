@@ -9,14 +9,8 @@ import { IAnime } from "../../entities/IAnime";
 export class AnimeCardComponent implements OnInit {
 
     @Input() anime!: IAnime;
-    shortSynopsis!: string;
 
     ngOnInit(): void {
-        this.shortSynopsis = this.toShortSynopsis(this.anime.synopsis);
-    }
-    
-    toShortSynopsis(value: string): string {
-        return value.slice(0, 150);
     }
     
 }

@@ -12,5 +12,6 @@ export class HomeLayoutComponent implements OnInit {
     constructor(private store: Store) {}
     ngOnInit(): void {
         this.store.dispatch(HomeActions.loadAnimes());
+        this.store.dispatch(HomeActions.loadMovies());
     }
 }

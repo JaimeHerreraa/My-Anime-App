@@ -11,7 +11,13 @@ export class AnimeService {
     constructor(private httpClient: HttpClient) {}
 
     getAnimeList(): Observable<IAnime[]> {
-        return this.httpClient.get(`${this.url}?limit=25&page=1`).pipe(
+        return this.httpClient.get(`${this.url}?type=tv`).pipe(
+            map((response: any) => this.convertToIAnime(response.data))
+        )
+    }
+
+    getMoviesList(): Observable<IAnime[]> {
+        return this.httpClient.get(`${this.url}?type=movie`).pipe(
             map((response: any) => this.convertToIAnime(response.data))
         )
     }

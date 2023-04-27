@@ -77,9 +77,9 @@
     min-height: 200px;
     position: absolute;
     opacity: 0;
-    transition: opacity ease .5s;
-    bottom: 60px;
-    left: 100px;
+    transition: opacity ease .3s;
+    bottom: 70px;
+    left: 80px;
 }
 
 .card-img:hover > .card-popover {

@@ -16,9 +16,8 @@ export class HomeAnimeListComponent implements OnInit {
     constructor(private store: Store<State>) {}
     ngOnInit(): void {
         this.store.select(animesSelector).subscribe(animes => {
-            this.animeList = animes.filter(anime => anime.type.toLowerCase() !== "movie");
+            this.animeList = animes;
         })
     }
-
 
 }
