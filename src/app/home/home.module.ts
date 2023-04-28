@@ -7,21 +7,21 @@ import { EffectsModule } from "@ngrx/effects";
 import { StoreModule } from "@ngrx/store";
 import { AnimeEffect } from "./state/anime.effect";
 import { homeReducer } from "./state/home.reducer";
-import { CommonModule } from "@angular/common";
 import { HomeContentComponent } from "./home-content/home-content.component";
 import { HomeAnimeListComponent } from "./home-content/home-anime-list/home-anime-list.component";
 import { AnimeCardComponent } from "./home-content/anime-card/anime-card.component";
 import { MovieEffect } from "./state/movie.effect";
 import { StringShorthenerPipe } from "./services/string-shorthener.pipe";
 import { SharedModule } from "../shared/shared.module";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
     imports: [
         HttpClientModule,
         EffectsModule.forFeature([AnimeEffect, MovieEffect]),
         StoreModule.forFeature("home", homeReducer),
-        CommonModule,
-        SharedModule
+        SharedModule,
+        RouterModule
     ],
     declarations: [
         HomeLayoutComponent,

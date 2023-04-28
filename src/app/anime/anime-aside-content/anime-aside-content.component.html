@@ -1,0 +1,33 @@
+<div class="d-flex flex-column w-100 align-items-center">
+    <img class="aside-img" [src]="anime?.images?.large_image_url" [alt]="anime?.title">
+    <div class="airing-info d-flex align-items-center justify-content-center mt-3" [class.backred]="anime?.airing === false">
+        <i class="bi bi-cast me-3"></i>
+        <p class="airing-text m-0">{{anime?.status}}</p>
+    </div>
+    <div class="anime-aside-details d-flex flex-column mt-3 p-3 w-100">
+        <h2>Details</h2>
+        <hr class="mb-3 mt-3">
+        <div class="anime-detail mb-1 d-flex align-items-center">Type: <p class="ms-2">{{anime?.type}}</p></div>
+        <div class="anime-detail mb-1 d-flex align-items-center">Episodes: <p class="ms-2">{{anime?.episodes}}</p></div>
+        <div class="anime-detail mb-1 d-flex align-items-center">Status: <p class="ms-2">{{anime?.status}}</p></div>
+        <div class="anime-detail mb-1 d-flex align-items-center">Rating: <p class="ms-2">{{anime?.rating}}</p></div>
+        <div class="anime-detail mb-1 d-flex align-items-center">Duration: <p class="ms-2">{{anime?.duration}}</p></div>
+        <div class="anime-detail mb-1 d-flex align-items-center">Producers: <p class="ms-2">{{producers | shorthener : 22 }}...</p></div>
+        <div class="anime-detail mb-1 d-flex align-items-center">Licensors: <p class="ms-2">{{licensors | shorthener : 22 }}...</p></div>
+        <div class="anime-detail mb-1 d-flex align-items-center">Source: <p class="ms-2">{{anime?.source}}</p></div>
+        <div class="anime-detail mb-1 d-flex align-items-center">Genres: <p class="ms-2">{{genres | shorthener : 25 }}...</p></div>
+        <div class="anime-detail mb-1 d-flex align-items-center">Rank: <p class="ms-2">#{{anime?.rank}}</p></div>
+        <div class="anime-detail mb-1 d-flex align-items-center">Popularity: <p class="ms-2">#{{anime?.popularity}}</p></div>
+        <div class="anime-detail mb-1 d-flex align-items-center">Members: <p class="ms-2">{{anime?.members}}</p></div>  
+    </div>
+    <!-- <div class="anime-options d-flex mt-3">
+        <div class="follow d-flex w-50 h-100 align-items-center justify-content-center me-4">
+            <div class="icon-div me-2 d-flex justify-content-center align-items-center"><i class="bi bi-heart-fill"></i></div>
+            <div class="text-div text-center">Follow</div>
+        </div>
+        <div class="unfollow d-flex w-50 h-100 align-items-center justify-content-center">
+            <div class="icon-div me-2 d-flex justify-content-center align-items-center"><i class="bi bi-heartbreak-fill"></i></div>
+            <div class="text-div text-center">Unfollow</div>
+        </div>
+    </div> -->
+</div>

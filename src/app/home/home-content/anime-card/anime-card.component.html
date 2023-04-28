@@ -1,5 +1,5 @@
-<div class="card-content d-flex flex-column align-items-center justify-content-center ">
-    <div class="card-img">
+<div class="card-content d-flex flex-column align-items-center justify-content-center">
+    <div class="card-img" (click)="navigate()">
         <img [src]="anime.images.image_url" [alt]="anime.title">
         <div class="card-tag text-center">{{anime.type === "TV" ? "Anime" : ""}}</div>
         <div class="card-hover d-flex justify-content-center align-items-center"><i class="bi bi-play-circle"></i></div>

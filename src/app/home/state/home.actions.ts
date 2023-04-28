@@ -6,5 +6,5 @@ export const loadAnimesSuccess = createAction("[Home] load anime list success", 
 export const loadAnimesError = createAction("[Home] load anime list error");
 
 export const loadMovies = createAction("[Home] load movie list");
-export const loadMoviesSuccess = createAction("[Home] load movie list success", props<{ movies: IAnime[]}>());
-export const loadMoviesError = createAction("[Home] load movie list error")
+export const loadMoviesSuccess = createAction("[Home] load movie list success", props<{ movies: IAnime[] }>());
+export const loadMoviesError = createAction("[Home] load movie list error");

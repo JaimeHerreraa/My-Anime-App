@@ -7,6 +7,7 @@ import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { AnimeModule } from './anime/anime.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EffectsModule } from '@ngrx/effects';
     SharedModule,
     HomeModule,
     StoreModule.forRoot({}),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([]),
+    AnimeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

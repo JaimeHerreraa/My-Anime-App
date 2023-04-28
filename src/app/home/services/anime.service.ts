@@ -12,17 +12,62 @@ export class AnimeService {
 
     getAnimeList(): Observable<IAnime[]> {
         return this.httpClient.get(`${this.url}?type=tv`).pipe(
-            map((response: any) => this.convertToIAnime(response.data))
+            map((response: any) => this.convertToIAnimeArray(response.data))
         )
     }
 
     getMoviesList(): Observable<IAnime[]> {
         return this.httpClient.get(`${this.url}?type=movie`).pipe(
+            map((response: any) => this.convertToIAnimeArray(response.data))
+        )
+    }
+
+    getAnimeById(id:number): Observable<IAnime> {
+        return this.httpClient.get(`${this.url}/${id}/full`).pipe(
             map((response: any) => this.convertToIAnime(response.data))
         )
     }
 
-    private convertToIAnime(data: any[]): IAnime[] {
+    private convertToIAnime(data: any): IAnime {
+
+        const producers = data.producers.map((producer: any) => {
+            return { id: producer.mal_id, name: producer.name };
+        });
+
+        const licensors = data.licensors.map((licensor: any) => {
+            return { id: licensor.mal_id, name: licensor.name }
+        });
+
+        const genres = data.genres.map((genre: any) => {
+            return { name: genre.name }
+        });
+
+        return {
+            id: data.mal_id,
+            images: data.images.jpg,
+            title: data.title,
+            title_english: data.title_english,
+            title_japanese: data.title_japanese,
+            type: data.type,
+            source: data.source,
+            status: data.status,
+            airing: data.airing,
+            episodes: data.episodes,
+            aired: data.aired.string,
+            duration: data.duration,
+            rating: data.rating,
+            score: data.score,
+            rank: data.rank,
+            popularity: data.popularity,
+            members: data.members,
+            synopsis: data.synopsis,
+            producers: producers,
+            licensors: licensors,
+            genres: genres
+        } as IAnime
+    }
+
+    private convertToIAnimeArray(data: any[]): IAnime[] {
         const animeList = data.map(anime => {
 
             const producers = anime.producers.map((producer: any) => {

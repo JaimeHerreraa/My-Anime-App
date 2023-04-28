@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { NavBarComponent } from "./navbar/navbar.component";
 import { FooterComponent } from "./footer/footer.component";
 import { SpinnerComponent } from "./spinner/spinner.component";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
     declarations: [
@@ -12,7 +13,8 @@ import { SpinnerComponent } from "./spinner/spinner.component";
     exports: [
         NavBarComponent,
         FooterComponent,
-        SpinnerComponent
+        SpinnerComponent,
+        CommonModule
     ]
 })
 export class SharedModule {}

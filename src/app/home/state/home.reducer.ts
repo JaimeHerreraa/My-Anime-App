@@ -5,6 +5,7 @@ import * as HomeActions from "./home.actions";
 export interface HomeState {
     animes: IAnime[];
     movies: IAnime[];
+    currentSelection: IAnime;
     animesLoading: boolean;
     moviesLoading: boolean;
 }
@@ -12,6 +13,7 @@ export interface HomeState {
 const initialState: HomeState = {
     animes: [],
     movies: [],
+    currentSelection: {} as IAnime,
     animesLoading: true,
     moviesLoading: true
 }
