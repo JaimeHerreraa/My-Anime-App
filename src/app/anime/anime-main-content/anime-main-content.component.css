@@ -1,0 +1,76 @@
+.anime-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0;
+    color: #fff;
+}
+
+.anime-tag {
+    width: 4.5rem;
+    height: 1.5rem;
+    background-color: #00BAF0;
+    border-radius: 1rem;
+    color: #fff;
+    font-size: .8rem;
+}
+
+.anime-japanese-title > span {
+    font-size: .7rem;
+    color: #fff;
+}
+
+.anime-japanese-title {
+    background-color: #8a8a8a ;
+    height: 1.7rem;
+    border-radius: 1.5rem;
+    width: fit-content;
+}
+
+.score {
+    background-color: #01BAEF;
+    width: 2.8rem;
+    height: 2.8rem;
+    color: #fff;
+    font-weight: 600;
+    border-top-left-radius: .3rem;
+    border-bottom-left-radius: .3rem;
+}
+
+.anime-synopsis {
+    background-color: #fff;
+    border-radius: .3rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.anime-synopsis .anime-title {
+    color: #000;
+}
+
+.synopsis {
+    font-size: .8rem;
+    color: #9DA1A4;
+}
+
+.genre-tag {
+    min-width: 4.5rem;
+    width: fit-content;
+    height: 1.5rem;
+    background-color: #E7F5FA;
+    border-radius: 1rem;
+    color: #01BAEF;
+    font-size: .7rem;
+    font-weight: 600;
+    transition: all ease .5s;
+}
+
+.genre-tag:hover {
+    background-color: #01BAEF;
+    color: #fff;
+    cursor: pointer;
+}
+
+.anime-header {
+    background-color: #2F353A;
+    border-radius: .3rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}

@@ -7,6 +7,8 @@ import { animeReducer } from "./state/anime.reducer";
 import { EffectsModule } from "@ngrx/effects";
 import { AnimeEffect } from "./state/anime.effect";
 import { SharedModule } from "../shared/shared.module";
+import { AnimeMainContentComponent } from "./anime-main-content/anime-main-content.component";
+import { StarsScoreComponent } from "./stars-score/stars-score.component";
 
 @NgModule({
     imports: [
@@ -17,7 +19,9 @@ import { SharedModule } from "../shared/shared.module";
     ],
     declarations: [
         AnimeLayoutComponent,
-        AnimeAsideContentComponent
+        AnimeAsideContentComponent,
+        AnimeMainContentComponent,
+        StarsScoreComponent
     ],
     exports: [
         AnimeLayoutComponent

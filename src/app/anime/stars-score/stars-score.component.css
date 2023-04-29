@@ -1,0 +1,8 @@
+.score-stars {
+    width: 7rem;
+    height: 2.8rem;
+    color: #FCC402;
+    background-color: #413C3B;
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+}

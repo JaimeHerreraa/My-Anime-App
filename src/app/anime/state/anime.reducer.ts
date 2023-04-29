@@ -37,5 +37,11 @@ export const animeReducer = createReducer<AnimeState>(
             anime: action.anime,
             loading: false
         }
+    }),
+    on(AnimeActions.resetAnimeState, (state): AnimeState => {
+        return {
+            anime: {} as IAnime,
+            loading: true
+        }
     })
 )

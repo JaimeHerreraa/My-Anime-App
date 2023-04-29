@@ -4,7 +4,7 @@
         <i class="bi bi-caret-right-fill"></i>
     </div>
     <div *ngIf="movies" class="aside-list pe-3 ps-3 pt-2 pb-2 d-flex flex-column">
-        <div *ngFor="let movie of movies" class="aside-list-item mb-3 d-flex align-items-center">
+        <div *ngFor="let movie of movies" class="aside-list-item mb-3 d-flex align-items-center" (click)="navigate(movie.id)" >
             <div class="icon-div d-flex justify-content-center align-items-center "><i
                     class="bi bi-caret-right-fill"></i></div>
             <div class="ms-3">

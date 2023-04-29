@@ -1,26 +1,34 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnDestroy, OnInit } from "@angular/core";
 import { IAnime } from "src/app/home/entities/IAnime";
-import { AppState, currentAnimeSelector } from "../state/anime.reducer";
+import { currentAnimeSelector } from "../state/anime.reducer";
 import { Store } from "@ngrx/store";
+import { Subscription } from "rxjs";
+import * as AnimeActions from "../state/anime.actions";
 
 @Component({
     selector: "anime-aside-content",
     templateUrl: "./anime-aside-content.component.html",
     styleUrls: ["./anime-aside-content.component.css"]
 })
-export class AnimeAsideContentComponent implements OnInit {
+export class AnimeAsideContentComponent implements OnInit, OnDestroy {
 
     anime?: IAnime;
     genres: string = "";
     licensors: string = "";
     producers: string = "";
 
+    sub!: Subscription;
+
     constructor(private store: Store) {}
     ngOnInit(): void {
-        this.store.select(currentAnimeSelector).subscribe(anime => {
+        this.sub = this.store.select(currentAnimeSelector).subscribe(anime => {
             this.anime = anime;
             this.convertToString();
         });
+    }
+
+    ngOnDestroy(): void {
+        this.store.dispatch(AnimeActions.resetAnimeState());
     }
 
     convertToString(): void {

@@ -3,8 +3,12 @@ import { NavBarComponent } from "./navbar/navbar.component";
 import { FooterComponent } from "./footer/footer.component";
 import { SpinnerComponent } from "./spinner/spinner.component";
 import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
+    imports: [
+        RouterModule
+    ],
     declarations: [
         NavBarComponent,
         FooterComponent,

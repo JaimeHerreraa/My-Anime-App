@@ -1,0 +1,20 @@
+<div class="d-flex flex-column w-100">
+    <div class="anime-header p-3 d-flex justify-content-between">
+        <div class="d-flex flex-column">
+            <p class="anime-title">{{anime?.title}}</p>
+            <div class="anime-japanese-title text-center mt-1 pe-2 ps-2"><span>{{anime?.title_japanese}}</span></div>
+            <div class="anime-tag mt-2 d-flex justify-content-center align-items-center">{{anime?.type === "TV" ? "Anime" : anime?.type }}</div>
+        </div>
+        <div class="anime-score d-flex align-items-center">
+            <div class="score d-flex justify-content-center align-items-center">{{anime?.score}}</div>
+            <anime-stars-score [score]="score"></anime-stars-score>
+        </div>
+    </div>
+    <div class="anime-synopsis d-flex flex-column mt-4 p-3">
+        <p class="anime-title">Synopsis</p>
+        <div class="d-flex align-items-center mt-2">
+            <div *ngFor="let genre of anime?.genres" class="genre-tag d-flex justify-content-center align-items-center me-2 p-2">{{genre.name}}</div>
+        </div>
+        <p class="synopsis mt-3">{{anime?.synopsis}}</p>
+    </div>
+</div>
