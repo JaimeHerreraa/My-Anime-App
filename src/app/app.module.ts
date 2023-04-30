@@ -8,6 +8,7 @@ import { HomeModule } from './home/home.module';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { AnimeModule } from './anime/anime.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AnimeModule } from './anime/anime.module';
     HomeModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
-    AnimeModule
+    AnimeModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

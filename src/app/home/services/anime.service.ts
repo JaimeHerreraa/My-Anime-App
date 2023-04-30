@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, map } from "rxjs";
 import { IAnime } from "../entities/IAnime";
+import { IEpisodeDetails, IEpisodeList } from "../entities/IEpisode";
 
 @Injectable()
 export class AnimeService {
@@ -26,6 +27,38 @@ export class AnimeService {
         return this.httpClient.get(`${this.url}/${id}/full`).pipe(
             map((response: any) => this.convertToIAnime(response.data))
         )
+    }
+
+    getAnimeEpisodesList(id: number | undefined): Observable<IEpisodeList> {
+        return this.httpClient.get(`${this.url}/${id}/episodes`).pipe(
+            map((res: any) => this.convertToIEpisodeList(res))
+        )
+    }
+
+    getEpisodeDetails(animeId: number, episodeId: number): Observable<IEpisodeDetails> {
+        return this.httpClient.get(`${this.url}/${animeId}/episodes/${episodeId}`).pipe(
+            map((res: any) => this.convertToIEpisodeDetails(res))
+        )
+    }
+
+    private convertToIEpisodeDetails(response: any): IEpisodeDetails {
+        return {
+            id: response.data.mal_id,
+            title: response.data.title,
+            title_japanese: response.data.title_japanese,
+            synopsis: response.data.synopsis
+        }
+    }
+
+    private convertToIEpisodeList(response: any): IEpisodeList {
+        const episodes = response.data.map((e: any) => {
+            return { id: e.mal_id, title: e.title}
+        })
+
+        return {
+            pagination: response.pagination,
+            data: episodes
+        }
     }
 
     private convertToIAnime(data: any): IAnime {

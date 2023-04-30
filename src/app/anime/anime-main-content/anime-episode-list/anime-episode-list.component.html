@@ -1,0 +1,35 @@
+<div *ngIf="animeType === 'TV'" class="episode-list d-flex flex-column mt-4 w-100">
+    <div class="list-header d-flex align-items-center justify-content-between p-3 mb-2">
+        <p>Episodes List</p>
+        <div class="search-options d-flex align-items-center">
+            <button type="button" class="btn btn-info w-50 me-3" style="color: #fff;">Mayor a menor</button>
+            <input type="text" class="form-control w-50" placeholder="Search" id="episode">
+        </div>
+    </div>
+
+    <div class="accordion-flush" ngbAccordion>
+        <div *ngFor="let episode of episodeList?.data" ngbAccordionItem>
+            <h2 ngbAccordionHeader>
+                <button ngbAccordionButton class="ps-3 pe-3" (click)="onClick(episode.id)">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-div me-3 d-flex justify-content-center align-items-center"><i class="bi bi-caret-right-fill"></i></div>
+                        <img src="assets/images/proximo.png" alt="episode thumbnail">
+                        <div class="episode-title ms-4 d-flex flex-column justify-content-center">
+                            <p class="anime-name">{{episode.title}}</p>
+                            <p class="episode-id">Episode {{episode.id}}</p>
+                        </div>
+                    </div>
+                </button>
+            </h2>
+            <div ngbAccordionCollapse>
+                <div ngbAccordionBody style="background-color: #2F353A;">
+                    <ng-template><anime-episode-details></anime-episode-details></ng-template>
+                </div>
+                <!-- <div *ngIf="loadingStatus" ngbAccordionBody style="background-color: #fff">
+                    <ng-template>
+                    </ng-template>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>

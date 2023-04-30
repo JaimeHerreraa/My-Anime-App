@@ -8,7 +8,7 @@
         <h2>Details</h2>
         <hr class="mb-3 mt-3">
         <div class="anime-detail mb-1 d-flex align-items-center">Type: <p class="ms-2">{{anime?.type}}</p></div>
-        <div class="anime-detail mb-1 d-flex align-items-center">Episodes: <p class="ms-2">{{anime?.episodes}}</p></div>
+        <div *ngIf="anime?.episodes" class="anime-detail mb-1 d-flex align-items-center">Episodes: <p class="ms-2">{{anime?.episodes}}</p></div>
         <div class="anime-detail mb-1 d-flex align-items-center">Status: <p class="ms-2">{{anime?.status}}</p></div>
         <div class="anime-detail mb-1 d-flex align-items-center">Rating: <p class="ms-2">{{anime?.rating}}</p></div>
         <div class="anime-detail mb-1 d-flex align-items-center">Duration: <p class="ms-2">{{anime?.duration}}</p></div>

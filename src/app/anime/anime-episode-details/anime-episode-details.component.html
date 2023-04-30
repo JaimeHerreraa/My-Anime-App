@@ -1,0 +1,12 @@
+<div *ngIf="!loadingStatus" class="d-flex w-100 flex-column">
+    <p class="episode-title">{{episodeDetails?.title}}</p>
+    <div class="episode-title-japanese p-2 d-flex justify-content-center align-items-center mt-1 mb-3">{{episodeDetails?.title_japanese === null ? "ヌル" : episodeDetails?.title_japanese}}</div>
+    <div *ngIf="episodeDetails?.synopsis" class="episode-synopsis">{{episodeDetails?.synopsis}}</div>
+</div>
+<p *ngIf="loadingStatus" class="card-text placeholder-glow">
+    <span class="placeholder col-7 bg-light"></span>
+    <span class="placeholder col-4 bg-light"></span>
+    <span class="placeholder col-4 bg-light"></span>
+    <span class="placeholder col-6 bg-light"></span>
+    <span class="placeholder col-8 bg-light"></span>
+</p>

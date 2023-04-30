@@ -19,6 +19,7 @@ export class AnimeLayoutComponent implements OnInit {
         })
         
         this.store.dispatch(AnimeActions.getAnime({id: Number(this.route.snapshot.params["id"])}));
+        this.store.dispatch(AnimeActions.getEpisodeList({id: Number(this.route.snapshot.params["id"])}));
     }
 
 }

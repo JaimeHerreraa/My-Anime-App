@@ -1,0 +1,56 @@
+.episode-list {
+    background-color: #fff;
+    border-radius: .3rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    max-height: 650px;
+    scrollbar-width: .5vw;
+    scrollbar-color: #00BAF0 #CCC;
+}
+
+.episode-list::-webkit-scrollbar {
+    width: .5vw;
+}
+
+.episode-list::-webkit-scrollbar-thumb {
+    background-color: #00BAF0;
+}
+
+.episode-list::-webkit-scrollbar-track {
+    background-color: #CCCCCC;
+}
+
+.list-header > p {
+    margin: 0;
+    color: #3B4248;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.anime-name {
+    margin: 0;
+    color: #3B4248;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color ease .3s;
+}
+
+.episode-id {
+    margin: 0;
+    color: #A99FA2;
+    font-size: .8rem;
+}
+
+.icon-div {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: .8rem;
+    background-color: #00BAF0;
+    color: #fff;
+    border-radius: 50%;
+}
+
+div[ngbAccordionItem]:hover .anime-name {
+    color: #00BAF0;
+}
