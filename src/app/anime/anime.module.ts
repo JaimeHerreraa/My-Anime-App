@@ -14,14 +14,17 @@ import { NgbAccordionModule } from "@ng-bootstrap/ng-bootstrap";
 import { EpisodeEffect } from "./state/episode.effect";
 import { AnimeEpisodeDetailsComponent } from "./anime-episode-details/anime-episode-details.component";
 import { DetailEffect } from "./state/details.effect";
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { PaginationEffect } from "./state/pagination.effect";
 
 @NgModule({
     imports: [
         HomeModule,
         StoreModule.forFeature("anime", animeReducer),
-        EffectsModule.forFeature([AnimeEffect, EpisodeEffect, DetailEffect]),
+        EffectsModule.forFeature([AnimeEffect, EpisodeEffect, DetailEffect, PaginationEffect]),
         SharedModule,
-        NgbAccordionModule
+        NgbAccordionModule,
+        InfiniteScrollModule
     ],
     declarations: [
         AnimeLayoutComponent,

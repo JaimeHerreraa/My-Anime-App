@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, map } from "rxjs";
 import { IAnime } from "../entities/IAnime";
-import { IEpisodeDetails, IEpisodeList } from "../entities/IEpisode";
+import { IEpisode, IEpisodeDetails, IEpisodeList } from "../entities/IEpisode";
 
 @Injectable()
 export class AnimeService {
@@ -38,6 +38,12 @@ export class AnimeService {
     getEpisodeDetails(animeId: number, episodeId: number): Observable<IEpisodeDetails> {
         return this.httpClient.get(`${this.url}/${animeId}/episodes/${episodeId}`).pipe(
             map((res: any) => this.convertToIEpisodeDetails(res))
+        )
+    }
+
+    getEpisodeListPagination(animeId: number,pageNumber: number): Observable<IEpisodeList> {
+        return this.httpClient.get(`https://api.jikan.moe/v4/anime/${animeId}/episodes?page=${pageNumber}`).pipe(
+            map((res: any) => this.convertToIEpisodeList(res))
         )
     }
 

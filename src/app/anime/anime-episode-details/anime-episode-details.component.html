@@ -1,4 +1,4 @@
-<div *ngIf="!loadingStatus" class="d-flex w-100 flex-column">
+<div *ngIf="!loadingStatus && error.status < 400" class="d-flex w-100 flex-column">
     <p class="episode-title">{{episodeDetails?.title}}</p>
     <div class="episode-title-japanese p-2 d-flex justify-content-center align-items-center mt-1 mb-3">{{episodeDetails?.title_japanese === null ? "ヌル" : episodeDetails?.title_japanese}}</div>
     <div *ngIf="episodeDetails?.synopsis" class="episode-synopsis">{{episodeDetails?.synopsis}}</div>
@@ -10,3 +10,9 @@
     <span class="placeholder col-6 bg-light"></span>
     <span class="placeholder col-8 bg-light"></span>
 </p>
+<div *ngIf="error.status > 300" class="d-flex flex-column w-100">
+    <p class="error-title">Something went wrong!</p>
+    <div class="error-type p-2 d-flex justify-content-center align-items-center mt-1 mb-3">{{error.statusText
+    }}</div>
+    <div class="error-message">{{error.message}}</div>
+</div>

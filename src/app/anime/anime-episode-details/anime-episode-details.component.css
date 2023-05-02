@@ -5,7 +5,7 @@
     color: #fff;
 }
 
-.episode-title-japanese {
+.episode-title-japanese, .error-type {
     background-color: #8a8a8a ;
     height: 1.5rem;
     border-radius: 1.5rem;
@@ -17,4 +17,16 @@
 .episode-synopsis {
     font-size: .8rem;
     color: #9DA1A4;
+}
+
+.error-message {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.error-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0;
+    color: #DC3545;
 }

@@ -1,4 +1,4 @@
-<div *ngIf="animeType === 'TV'" class="episode-list d-flex flex-column mt-4 w-100">
+<div *ngIf="animeType === 'TV'" class="episode-list d-flex flex-column mt-4 w-100" infinite-scroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="500" (scrolled)="onScroll()" [scrollWindow]="false" >
     <div class="list-header d-flex align-items-center justify-content-between p-3 mb-2">
         <p>Episodes List</p>
         <div class="search-options d-flex align-items-center">
@@ -25,10 +25,6 @@
                 <div ngbAccordionBody style="background-color: #2F353A;">
                     <ng-template><anime-episode-details></anime-episode-details></ng-template>
                 </div>
-                <!-- <div *ngIf="loadingStatus" ngbAccordionBody style="background-color: #fff">
-                    <ng-template>
-                    </ng-template>
-                </div> -->
             </div>
         </div>
     </div>
